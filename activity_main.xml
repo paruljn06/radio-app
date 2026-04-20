@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mystic Pet Summoner"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_dark"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Pet Preview Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/petCard"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/card_bg_default">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/petImage"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center"
+                        android:src="@android:drawable/btn_star_big_on"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/petStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginBottom="16dp"
+                        android:text="Select traits to summon!"
+                        android:textColor="@color/white"
+                        android:textStyle="italic" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose Element:"
+                android:layout_marginTop="24dp"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <RadioGroup
+                android:id="@+id/rgElement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/rbFire"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Fire"
+                    android:buttonTint="@color/fire_red" />
+
+                <RadioButton
+                    android:id="@+id/rbWater"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Water"
+                    android:buttonTint="@color/water_blue" />
+
+                <RadioButton
+                    android:id="@+id/rbGrass"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Grass"
+                    android:buttonTint="@color/grass_green"/>
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose Size:"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <RadioGroup
+                android:id="@+id/rgSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/rbTiny"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tiny &amp; Cute" />
+
+                <RadioButton
+                    android:id="@+id/rbNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Majestic Normal"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/rbGiant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Colossal Giant" />
+            </RadioGroup>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSummon"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="32dp"
+                android:text="SUMMON PET"
+                app:cornerRadius="12dp"
+                android:backgroundTint="@color/primary_dark"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
